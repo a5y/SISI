@@ -1,0 +1,935 @@
+:root{
+    --mainColor:rgb(41, 201, 89);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family:'Roboto',Arial,sans-serif;
+    font-size: 15px;
+}
+ul{
+    list-style: none;
+}
+a , span{
+    display: inline-block;
+}
+.container{
+    padding: 0 7%;
+    height: 100%;
+}
+.main{
+    color: var(--mainColor);
+}
+
+
+
+
+.navbar{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 75px;
+    border-left: 3px solid var(--mainColor);
+    background-color: black;
+}
+.navbar .logo{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: var(--mainColor);
+    margin: 25px 20px;
+}
+.navbar .logo a{
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 13px;
+    font-size: 18px;
+}
+.navbar .navigation li{
+    position: relative;
+}
+.navbar .navigation li span{
+    position: absolute;
+    width: 75px;
+    height: 20px;
+    background-color: var(--mainColor);
+    color: #eee;
+    padding: 4px;
+    font-size: 12px;
+    left: -75px;
+    text-align: center;
+    top: 15px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.navbar .navigation li:hover span{
+    opacity: 1;
+}
+.navbar .navigation li:hover a{
+    background-color: var(--mainColor);
+    border-color: transparent;
+}
+.navbar .navigation li span::before{
+    content: "";
+    position: absolute;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--mainColor);
+    right: -16px;
+    top: 1.5px;
+}
+.navbar .navigation li a{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    color: #ddd;
+    padding: 6px ;
+    margin: 10px 23px;
+}
+.navbar .up{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--mainColor);
+
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+.up a{
+    color: #eee;
+}
+
+
+
+header{
+    background-image: url('../IMG/rebeeca.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+header .overlay{
+    height: 100%;
+    background: linear-gradient(70deg,rgba(0,0,0,0.4) 40%,rgba(255,255,255,0.4));
+}
+header .header-content{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .header-content .content{
+    flex: 0 0 50%;
+}
+header .header-content h1{
+    color: #fff;
+    font-size: 3rem;
+    margin: 10px 0;
+}
+header .header-content h1 span{
+    color: var(--mainColor);
+}
+.content .animated{
+    position: relative;
+    height: 65px;
+    perspective: 500px;
+}
+.animated > div{
+    position: absolute;
+    color: #fff;
+    margin: 10px 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(90deg);
+    animation: rotate 4.5s infinite; 
+    opacity: 0;
+    font-size: 18px;
+}
+.animated div:nth-child(2){
+    animation-delay: 1.5s;
+}   
+.animated div:nth-child(3){
+    animation-delay: 3s;
+}   
+
+@keyframes rotate{
+    0%,30%{
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+    15%{
+        transform: rotateX(0);
+        opacity: 1;
+    }
+}
+.content button{
+    color: #fff;
+    background-color: var(--mainColor);
+    width: 180px;
+    height: 45px;
+    position: relative;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px 10px;
+}
+.content button::before{
+    content: "";
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.4s;
+    
+}
+.content button:hover::before{
+    width: 100%;
+}
+
+
+
+
+.about{
+    margin: 100px 0;
+}
+.about .log{
+    display: flex;
+    justify-content: space-between;
+}
+.log .intro{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 200px;
+}
+.log .intro::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    border: 1px dotted black;
+    padding: 0.5px;
+    width: 30%;
+}
+.log .intro1{
+    font-size: 3rem;
+    opacity: 0.14;
+    font-weight: bold;
+    margin-right: 90px;
+}
+.about .content{
+    margin: 70px 0;
+    display: flex;
+    justify-content: center;
+}
+.content .img{
+    position: relative;
+    margin-right: 30px;
+    width: 35%;
+    height: 86vh;
+}
+.img .links{
+    position: absolute;
+    background-color: rgb(15, 8, 22);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    text-align: center;
+}
+.links a{
+    background-color: var(--mainColor);
+    color: rgb(15, 8, 22);
+    font-size: 18px;
+    padding: 5px 4px;
+    width: 30px;
+    height: 30px;
+    margin: 15px 8px;
+    transition: border-radius 0.3s;
+}
+.links a:hover{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 23px;
+}
+.content .kalam{
+    width: 65%;
+}
+.kalam h4{
+    margin: 5px 0 20px 0;
+    letter-spacing: 2px;
+}
+.kalam h1{
+    margin: 10px 0 40px 0;
+    position: relative;
+    font-weight: normal;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+
+}
+.kalam h1::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    border: 1px dotted black;
+    padding: 0.5px;
+    width: 15%;
+    font-weight: 300px;
+}
+.kalam .nums{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.nums .num{
+    margin: 25px 20px 50px 0;
+    position: relative;
+    width: 28%;
+    padding:10px 20px ;
+}
+.nums .num span{
+    display: block;
+    font-size: 18px;
+    font-weight: 300px;
+    letter-spacing: 1.5px;
+ 
+}
+.nums .num::before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--mainColor); 
+}
+.nums .num::after{
+    content: "";
+    height: 100%;
+    width: 3px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--mainColor); 
+}
+.kalam p{
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    line-height: 20px;
+    margin-bottom: 50px;
+    width: 90%;
+}
+.kalam .load{
+    width: 100%;
+    margin-top: 50px;
+}
+.kalam .bord,.kalam .bord1,.kalam .bord2{
+    display: block;
+    position: relative;
+    margin: 54px 0; 
+}
+.kalam .bord::before{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 10px;
+    bottom: -20px;
+    left: 0;
+    background-color: #ccc;
+}
+.kalam .bord::after{
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 10px;
+    bottom: -20px;
+    left: 0;
+    background-color: var(--mainColor);
+}
+.kalam .bord1::before{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 10px;
+    bottom: -20px;
+    left: 0;
+    background-color: #ccc;
+}
+.kalam .bord1::after{
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 10px;
+    bottom: -20px;
+    left: 0;
+    background-color: var(--mainColor);
+}
+.kalam .bord2::before{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 10px;
+    bottom: -20px;
+    left: 0;
+    background-color: #ccc;
+}
+.kalam .bord2::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 10px;
+    bottom: -20px;
+    left: 0;
+    background-color: var(--mainColor);
+}
+
+
+
+.service{
+    margin: 100px 0;
+    background-color: rgb(15, 8, 22);
+}
+.service .log{
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0;
+}
+.service .log .intro{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 200px;
+    color: #fff;
+}
+.service .log .intro::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    border: 1px dotted var(--mainColor);
+    padding: 0.5px;
+    width: 30%;
+}
+.service .log .intro1{
+    font-size: 3rem;
+    opacity: 0.1;
+    font-weight: bold;
+    margin-right: 100px;
+    color: #fff;
+}
+.service .content .par{
+    color: #fff;
+    margin:-10px 0 50px 0;
+    line-height: 20px;
+    letter-spacing: 1px; 
+}
+.service .content .cards{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 60px;
+}
+.cards .card{
+    color: #fff;
+    width: 28.5%;
+    margin: 20px 35px 20px 0;
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 4px;
+    height:360px;
+    background-color: rgb(25, 17, 34);
+    padding: 15px 8px;
+}
+.card i{
+    width: 100%;
+    font-size:2.7rem;
+
+    padding: 15px 25px;
+}
+.card h3{
+    width: 100%;
+    padding: 15px 23px;
+}
+.card p{
+    width: 85%;
+    padding: 15px 15px 10px 23px;
+    line-height: 24px;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+    font-size: 13px;
+}
+.card:hover{
+    animation: trans 1s infinite;
+}
+@keyframes trans{
+    0%,100%{
+        transform: translateY(-6px);
+    }
+    50%{
+        transform: translateY(-2px)
+    }
+}
+
+
+
+
+
+.port{
+    margin: 100px 0;
+}
+.port .log{
+    display: flex;
+    justify-content: space-between;
+}
+.port .log .intro{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 200px;
+}
+.port .log .intro::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    border: 1px dotted black;
+    padding: 0.5px;
+    width: 30%;
+}
+.port .log .intro1{
+    font-size: 3rem;
+    opacity: 0.14;
+    font-weight: bold;
+    margin-right: 90px;
+}
+.port .par{
+    margin:65px 0;
+    line-height: 20px;
+    letter-spacing: 1px; 
+}
+.port .pages ul{
+    display: flex;
+    margin-bottom: 50px;
+}
+.pages ul li{
+    padding: 18px 20px;
+    color: black;
+    position: relative;
+}
+.pages ul li::before{
+    content: "";
+    position: absolute;
+    background-color: black;
+    width:0;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    transition: width 0.4s;
+    z-index: -1;
+}
+.pages ul li::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 0;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    transition: width 0.4s;
+    z-index: -1;
+}
+.pages ul li:hover::before,
+.pages ul li:hover::after{
+    width: 50%;
+}
+.pages ul li a{
+    text-decoration: none;
+    color: black;
+    letter-spacing: 1px;
+}
+.pages .active{
+    background-color: black;
+}
+.pages .active a{
+    color: var(--mainColor);
+    transition: color 0.3s;
+}
+.pages li:hover a{
+    color: #fff;
+}
+.port .cards1{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.cards1 .card1{
+    width: 28.5%;
+    margin: 30px 30px 110px 0;
+    position: relative;
+}
+.card1 .cont{
+    position: absolute;
+    left: 0;
+    color: #fff;
+    bottom: -200px;
+    width: 100%;
+    height: 120px;
+    background-color:rgb(15, 8, 22); 
+    letter-spacing: 2px;
+    margin-bottom: 100px;
+}
+.port .cont h4{
+    margin: 25px 30px;
+}
+.port .cont span{
+    font-size: 14px;
+    margin: 0px 10px 10px 30px;
+    width: 80%;
+    transition: all 0.5s;
+}
+.port .cont span::before{
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 25px;
+    position: relative;
+    left: 0;
+    top: -3px;
+    background-color: var(--mainColor);
+    margin-right: 10px;
+    transition: all 0.5s;
+}
+.port .cont span:hover::before{
+    width: 0;
+    margin-right: 0;
+    transition: all 0.5s;
+}
+
+
+
+
+.test{
+    margin: 100px 0;
+    background-color: #eee;
+}
+.test .log{
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0;
+}
+.test .log .intro{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 200px;
+}
+.test .log .intro::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    border: 1px dotted black;
+    padding: 0.5px;
+    width: 30%;
+}
+.test .log .intro1{
+    font-size: 3rem;
+    opacity: 0.14;
+    font-weight: bold;
+    margin-right: 90px;
+}
+.test .par{
+    margin:-10px 0 65px 0;
+    line-height: 20px;
+    letter-spacing: 1px; 
+}
+.test .cards2{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    margin-left: -20px;
+}
+.cards2 .card2{
+    background-color: rgb(25, 17, 34);
+    padding: 20px 10px;
+    color: #fff;
+    width: 40%;
+    margin-right: 30px;
+}
+.card2 .eval{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+.card2 .eval .img1{
+    display: inline-block;
+    background-image: url('../IMG/client-1.jpg');
+    background-size: cover;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+}
+.card2 .eval .img2{
+    display: inline-block;
+    background-image: url('../IMG/client-4.jpg');
+    background-size: cover;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+}
+.eval .stars{
+    margin-top: 50px;
+}
+.card2 .quote{
+    position: relative;
+    font-size: 8.5rem;
+    margin-left: 300px;
+    margin-top: -45px;
+    opacity: 0.3;
+    z-index: 0;
+}
+.card2 h3{
+    margin: -150px 15px 25px 15px;
+    letter-spacing: 2px;
+}
+.card2 p{
+    margin: 10px 15px;
+    width: 85%;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+
+
+.blog{
+    margin: 100px 0;
+}
+.blog .log{
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0;
+}
+.blog .log .intro{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 200px;
+}
+.blog .log .intro::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    border: 1px dotted black;
+    padding: 0.5px;
+    width: 30%;
+}
+.blog .log .intro1{
+    font-size: 3rem;
+    opacity: 0.14;
+    font-weight: bold;
+    margin-right: 90px;
+}
+.blog .par{
+    margin:-10px 0 65px 0;
+    line-height: 20px;
+    letter-spacing: 1px; 
+}
+.blog .cards3{
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 0;
+}
+.cards3 .card3{
+    margin-right: 40px;
+    width: 28.5%;
+    overflow: hidden;
+    
+}
+.card3 .img{
+    position: relative;
+    height: 75vh;
+}
+.cards3 .cont{
+    background-color: rgba(25, 17, 34,0.8);
+    position: absolute;
+    left: 0;
+    bottom: -110px;
+    color: #fff;
+    letter-spacing: 1.5px;
+    overflow: hidden;
+    transition: all 0.6s;
+}
+.card3 .cont .top{
+    font-size: 18px;
+}
+.card3 .cont .top a{
+    text-decoration: none;
+    color: #fff;
+    padding: 3px;
+    margin-left: 0;
+}
+.card3 .cont .top span{
+    margin-left: 15px;
+}
+.card3 .cont a{
+    margin: 15px 15px;
+    text-decoration: none;
+    font-weight: 250px;
+    transition: color 0.6s;
+    font-size: 18px;
+}
+.card3 .cont a:hover{
+    color: #fff;
+}
+.card3 .cont p{
+    width: 90%;
+    line-height: 25px;
+    margin: 5px 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.card3:hover .cont{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+
+
+.contact{
+    margin: 100px 0 0 0;
+    background-color: rgb(15, 8, 22);
+}
+.contact .log{
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0;
+}
+.contact .log .intro{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 200px;
+    color: #fff;
+}
+.contact .log .intro::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    border: 1px dotted var(--mainColor);
+    padding: 0.5px;
+    width: 30%;
+}
+.contact .log .intro1{
+    font-size: 3rem;
+    opacity: 0.1;
+    font-weight: bold;
+    margin-right: 100px;
+    color: #fff;
+}
+.contact .par{
+    margin:-10px 0 65px 0;
+    line-height: 25px;
+    letter-spacing: 1px; 
+    color: #fff;
+}
+.contact .content1{
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0;
+    padding-bottom: 80px;
+}
+.contact .content1 .data{
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.data form input{
+    width: 45%;
+    border: none;
+    border-bottom: 1px solid var(--mainColor);
+    margin: 10px 20px 10px 0;
+    background-color: transparent;
+    height: 50px;
+    font-size: 16.5px;
+}
+.data form textarea{
+    width: 95%;
+    border: none;
+    border-bottom: 1px solid var(--mainColor);
+    margin: 10px 20px 40px 0;
+    background-color: transparent;
+    font-size: 16.5px;
+}
+.data form button{
+    color: #ddd;
+    background-color: var(--mainColor);
+    width: 180px;
+    height: 45px;
+    position: relative;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px 10px;
+}
+.data form button::before{
+    content: "";
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.4s;
+    
+}
+.data form button:hover::before{
+    width: 100%;
+}
+.content1 .map{
+    width: 30%;
+    margin: 20px;
+}
+
+
+
+.rights{
+    background-color: rgb(33, 17, 48);
+    color: #fff;
+    padding: 30px 0;
+    height: 12vh;
+    text-align: center;
+    margin-top: -20px;
+
+
+}
+.rights .cont i{
+    font-size: 12px;
+    padding: 3px;
+}
+.rights .cont span{
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.rights .cont a{
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 16px;
+    transition: color 0.5s;
+}
+.rights .cont a:hover{
+    color:#fff;
+}
+
